@@ -1,0 +1,28 @@
+{
+  "name": "fintech-tests",
+  "version": "1.0.0",
+  "description": "Тестовое задание для покрытия страницы https://fintech.yandex.ru/ тестами Playwright",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test --config=playwright.config.ts",
+    "clean": "rimraf allure-results test-results results playwright-report",
+    "docker-run": "docker run --name ui_tests -v $(pwd)/allure-results:/tester/allure-results -v $(pwd)/playwright-report:/tester/playwright-report --rm ui_tests",
+    "docker-rm": "docker rm -f ui_tests || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cardinalX/fintech-tests.git"
+  },
+  "keywords": [],
+  "author": "cardinalX",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cardinalX/fintech-tests/issues"
+  },
+  "homepage": "https://github.com/cardinalX/fintech-tests#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.17.2",
+    "allure-playwright": "^2.0.0-beta.14",
+    "dotenv": "^10.0.0"
+  }
+}
